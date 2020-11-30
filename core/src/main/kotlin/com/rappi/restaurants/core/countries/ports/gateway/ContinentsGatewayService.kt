@@ -1,4 +1,4 @@
-package com.rappi.restaurants.core.countries.ports
+package com.rappi.restaurants.core.countries.ports.gateway
 
 import com.rappi.restaurants.core.countries.entities.Continent
 
