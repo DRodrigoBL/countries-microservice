@@ -3,7 +3,7 @@ package com.rappi.restaurants.core.countries.usecase.impl
 import com.rappi.restaurants.core.countries.entities.Continent
 import com.rappi.restaurants.core.countries.entities.Country
 import com.rappi.restaurants.core.countries.exception.ContinentUnavailableException
-import com.rappi.restaurants.core.countries.ports.gateway.ContinentsGatewayService
+import com.rappi.restaurants.core.countries.ports.gateway.web.ContinentsGatewayService
 import com.rappi.restaurants.core.countries.ports.persistence.CountriesRepositoryService
 import com.rappi.restaurants.core.countries.usecase.api.FindCountriesByContinentUseCase
 

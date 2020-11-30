@@ -1,6 +1,6 @@
 package com.rappi.restaurants.infraestructure.configuration
 
-import com.rappi.restaurants.core.countries.ports.gateway.ContinentsGatewayService
+import com.rappi.restaurants.core.countries.ports.gateway.web.ContinentsGatewayService
 import com.rappi.restaurants.core.countries.ports.persistence.CountriesRepositoryService
 import com.rappi.restaurants.core.countries.usecase.api.FindCountriesByContinentUseCase
 import com.rappi.restaurants.core.countries.usecase.impl.FindCountriesByContinentUseCaseImpl
