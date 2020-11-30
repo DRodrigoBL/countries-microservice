@@ -23,10 +23,6 @@ class CountryController(private val findCountriesByContinentUseCase: FindCountri
         return ResponseEntity.ok(CountriesResponse(continentId, toList))
     }
 
-    @GetMapping("hola")
-    fun findContinents(): ResponseEntity<ContinentsApiResponse>{
-        val blockingGet = continentsApi.getAvailableContinents().blockingGet()
-        return ResponseEntity.ok(blockingGet)
-    }
+
 
 }
