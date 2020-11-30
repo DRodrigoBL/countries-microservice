@@ -1,4 +1,4 @@
-package com.countries
+package com.rappi.restaurants.infraestructure
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

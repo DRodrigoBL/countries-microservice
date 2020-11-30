@@ -15,7 +15,7 @@ plugins {
 }
 
 allprojects {
-    group = "com.countries"
+    group = "com.rappi.restaurants.infraestructure"
     version = "1.0.0"
 
     tasks.withType<JavaCompile> {
