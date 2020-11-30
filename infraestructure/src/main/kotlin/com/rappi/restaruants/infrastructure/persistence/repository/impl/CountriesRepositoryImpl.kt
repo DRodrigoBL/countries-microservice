@@ -1,6 +1,6 @@
 package com.rappi.restaurants.infraestructure.persistence.repository.impl
 
-import com.rappi.restaruants.infraestructure.persistence.repository.api.CountriesRepository
+import com.rappi.restaruants.infrastructure.persistence.repository.api.CountriesRepository
 import com.rappi.restaurants.infraestructure.persistence.entities.CountryTable
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.JdbcTemplate

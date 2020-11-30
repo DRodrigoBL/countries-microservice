@@ -1,4 +1,4 @@
-package com.rappi.restaruants.infraestructure.persistence.repository.api
+package com.rappi.restaruants.infrastructure.persistence.repository.api
 
 import com.rappi.restaurants.infraestructure.persistence.entities.CountryTable
 
