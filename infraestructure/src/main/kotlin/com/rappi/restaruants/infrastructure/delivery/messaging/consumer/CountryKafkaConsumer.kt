@@ -1,19 +1,23 @@
-package com.rappi.restaruants.infrastructure.gateway.messaging.consumer
+package com.rappi.restaruants.infrastructure.delivery.messaging.consumer
 
-import com.rappi.restaruants.infrastructure.gateway.messaging.model.CountryMessage
-import com.rappi.restaruants.infrastructure.gateway.messaging.service.CountryConsumerService
+import com.rappi.restaruants.infrastructure.delivery.messaging.model.CountryMessage
+import com.rappi.restaurants.core.countries.entities.Continent
+import com.rappi.restaurants.core.countries.entities.Country
+import com.rappi.restaurants.core.countries.usecase.api.RegisterNewCountryUseCase
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 
 @Component
 internal class CountryKafkaConsumer(
-        private val countryConsumerService: CountryConsumerService
+        private val registerNewCountryUseCase: RegisterNewCountryUseCase
 ) {
 
     @KafkaListener(topics = ["country_new"], groupId = "country_new",
             containerFactory = "countryKafkaListenerFactory" )
     fun listener(countryMessage: CountryMessage) {
-        countryConsumerService.registerCountry(countryMessage)
+        registerNewCountryUseCase.registerNewCountry(
+                Country(0, countryMessage.countryName),
+                Continent(countryMessage.continentName))
     }
 
 }
