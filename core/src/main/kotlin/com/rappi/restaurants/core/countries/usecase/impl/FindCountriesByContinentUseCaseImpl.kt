@@ -8,17 +8,16 @@ import com.rappi.restaurants.core.countries.ports.persistence.CountriesRepositor
 import com.rappi.restaurants.core.countries.usecase.api.FindCountriesByContinentUseCase
 
 class FindCountriesByContinentUseCaseImpl(
-        private val countriesRepositoryService: CountriesRepositoryService,
-        private val continentsGatewayService: ContinentsGatewayService
+    private val countriesRepositoryService: CountriesRepositoryService,
+    private val continentsGatewayService: ContinentsGatewayService
 ) : FindCountriesByContinentUseCase {
 
     override fun execute(continent: String): List<Country> {
 
         val availableContinents = continentsGatewayService.findAvailableContinents()
-        if(!availableContinents.contains(Continent(continent))) {
+        if (!availableContinents.contains(Continent(continent))) {
             throw ContinentUnavailableException()
         }
         return countriesRepositoryService.findCountriesByContinent(continent)
     }
-
 }
