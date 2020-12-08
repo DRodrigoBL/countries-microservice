@@ -36,7 +36,6 @@ allprojects {
     tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
         this.jvmTarget = "1.8"
     }
-
 }
 
 subprojects {
@@ -47,6 +46,10 @@ subprojects {
     apply {
         plugin("io.spring.dependency-management")
         plugin("io.gitlab.arturbosch.detekt")
+    }
+
+    dependencies {
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0-RC1")
     }
 
     detekt {
