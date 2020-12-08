@@ -4,18 +4,19 @@ import com.rappi.restaurants.core.countries.entities.Country
 import java.sql.ResultSet
 
 data class CountryTable(
-        val id: Long,
-        val name: String,
-        val continent: ContinentEnum) {
+    val id: Long,
+    val name: String,
+    val continent: ContinentEnum
+) {
 
-    companion object{
+    companion object {
         fun fromResultSet(rs: ResultSet) =
-                CountryTable(
-                        rs.getLong("id"),
-                        rs.getString("name"),
-                        ContinentEnum.valueOf(rs.getString("continent")))
+            CountryTable(
+                rs.getLong("id"),
+                rs.getString("name"),
+                ContinentEnum.valueOf(rs.getString("continent"))
+            )
     }
-
 }
 
-fun CountryTable.toCountryModel(): Country = Country(id , name)
+fun CountryTable.toCountryModel(): Country = Country(id, name)

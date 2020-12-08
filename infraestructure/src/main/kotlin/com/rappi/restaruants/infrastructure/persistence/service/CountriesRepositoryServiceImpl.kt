@@ -22,7 +22,8 @@ class CountriesRepositoryServiceImpl(
     override fun createCountry(country: Country, continent: String) {
         val created = countryRepository
             .createCountry(CountryTable(0, country.name, ContinentEnum.valueOf(continent)))
-        if (created != 1)
+        if (created != 1) {
             throw CountryNotCreatedException()
+        }
     }
 }
