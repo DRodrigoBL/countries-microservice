@@ -1,4 +1,4 @@
-package com.rappi.restaurants.infraestructure.configuration
+package com.rappi.restaruants.infrastructure.configuration
 
 import com.rappi.restaurants.core.countries.ports.gateway.web.ContinentsGatewayService
 import com.rappi.restaurants.core.countries.ports.persistence.CountriesRepositoryService
@@ -13,15 +13,17 @@ import org.springframework.context.annotation.Configuration
 class WiringConfiguration {
 
     @Bean
-    fun findCountriesByContinentUseCase(countriesRepositoryService: CountriesRepositoryService,
-                                        continentsGatewayService: ContinentsGatewayService):
-            FindCountriesByContinentUseCase {
-        return FindCountriesByContinentUseCaseImpl(countriesRepositoryService, continentsGatewayService)
-    }
+    fun findCountriesByContinentUseCase(
+        countriesRepositoryService: CountriesRepositoryService,
+        continentsGatewayService: ContinentsGatewayService
+    ):
+        FindCountriesByContinentUseCase {
+            return FindCountriesByContinentUseCaseImpl(countriesRepositoryService, continentsGatewayService)
+        }
 
     @Bean
     fun registerNewCountryUseCase(countriesRepositoryService: CountriesRepositoryService):
-            RegisterNewCountryUseCase {
-        return RegisterNewCountryUseCaseImpl(countriesRepositoryService)
-    }
+        RegisterNewCountryUseCase {
+            return RegisterNewCountryUseCaseImpl(countriesRepositoryService)
+        }
 }

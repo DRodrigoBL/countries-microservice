@@ -1,4 +1,4 @@
-package com.rappi.restaurants.infraestructure.persistence.entities
+package com.rappi.restaruants.infrastructure.persistence.entities
 
 enum class ContinentEnum {
     NORTH_AMERICA,

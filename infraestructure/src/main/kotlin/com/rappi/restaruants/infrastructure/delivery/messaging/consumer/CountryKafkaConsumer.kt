@@ -9,15 +9,17 @@ import org.springframework.stereotype.Component
 
 @Component
 internal class CountryKafkaConsumer(
-        private val registerNewCountryUseCase: RegisterNewCountryUseCase
+    private val registerNewCountryUseCase: RegisterNewCountryUseCase
 ) {
 
-    @KafkaListener(topics = ["country_new"], groupId = "country_new",
-            containerFactory = "countryKafkaListenerFactory" )
+    @KafkaListener(
+        topics = ["country_new"], groupId = "country_new",
+        containerFactory = "countryKafkaListenerFactory"
+    )
     fun listener(countryMessage: CountryMessage) {
         registerNewCountryUseCase.registerNewCountry(
-                Country(0, countryMessage.countryName),
-                Continent(countryMessage.continentName))
+            Country(0, countryMessage.countryName),
+            Continent(countryMessage.continentName)
+        )
     }
-
 }

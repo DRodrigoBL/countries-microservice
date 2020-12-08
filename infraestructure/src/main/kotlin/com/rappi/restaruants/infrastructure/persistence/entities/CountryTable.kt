@@ -1,4 +1,4 @@
-package com.rappi.restaurants.infraestructure.persistence.entities
+package com.rappi.restaruants.infrastructure.persistence.entities
 
 import com.rappi.restaurants.core.countries.entities.Country
 import java.sql.ResultSet

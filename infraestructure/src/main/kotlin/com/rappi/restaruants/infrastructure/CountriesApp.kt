@@ -1,4 +1,4 @@
-package com.rappi.restaurants.infraestructure
+package com.rappi.restaruants.infrastructure
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,6 @@ import org.springframework.boot.runApplication
 class CountriesApp
 
 fun main(args: Array<String>) {
-	runApplication<CountriesApp>()
+    @Suppress("SpreadOperator")
+    runApplication<CountriesApp>(*args)
 }

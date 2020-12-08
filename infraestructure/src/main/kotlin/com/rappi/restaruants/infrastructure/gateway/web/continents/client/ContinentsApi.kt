@@ -1,6 +1,6 @@
-package com.rappi.restaurants.infraestructure.gateway.web.continents.client
+package com.rappi.restaruants.infrastructure.gateway.web.continents.client
 
-import com.rappi.restaurants.infraestructure.gateway.web.continents.model.ContinentsApiResponse
+import com.rappi.restaruants.infrastructure.gateway.web.continents.model.ContinentsApiResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

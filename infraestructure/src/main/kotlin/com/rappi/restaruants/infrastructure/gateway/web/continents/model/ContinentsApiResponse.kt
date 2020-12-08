@@ -1,3 +1,3 @@
-package com.rappi.restaurants.infraestructure.gateway.web.continents.model
+package com.rappi.restaruants.infrastructure.gateway.web.continents.model
 
-data class ContinentsApiResponse (val availableContinents: List<String>)
+data class ContinentsApiResponse(val availableContinents: List<String>)

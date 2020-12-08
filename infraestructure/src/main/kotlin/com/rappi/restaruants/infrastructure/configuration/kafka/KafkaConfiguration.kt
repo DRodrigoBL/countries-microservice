@@ -11,8 +11,6 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory
 import org.springframework.kafka.core.ConsumerFactory
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory
 import org.springframework.kafka.support.serializer.JsonDeserializer
-import java.util.*
-
 
 @EnableKafka
 @Configuration
@@ -29,14 +27,16 @@ class KafkaConfiguration {
         config[ConsumerConfig.AUTO_OFFSET_RESET_CONFIG] = "earliest"
         config[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
         config[ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG] = JsonDeserializer::class.java
-        return DefaultKafkaConsumerFactory<String, CountryMessage>(config, StringDeserializer(),
-                JsonDeserializer(CountryMessage::class.java))
+        return DefaultKafkaConsumerFactory<String, CountryMessage>(
+            config, StringDeserializer(),
+            JsonDeserializer(CountryMessage::class.java)
+        )
     }
 
     @Bean
     fun countryKafkaListenerFactory(): ConcurrentKafkaListenerContainerFactory<String, CountryMessage> {
         val factory: ConcurrentKafkaListenerContainerFactory<String, CountryMessage> =
-                ConcurrentKafkaListenerContainerFactory<String, CountryMessage>()
+            ConcurrentKafkaListenerContainerFactory<String, CountryMessage>()
         factory.consumerFactory = countryMessageConsumerFactory()
         return factory
     }

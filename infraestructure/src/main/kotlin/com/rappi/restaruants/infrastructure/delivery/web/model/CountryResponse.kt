@@ -1,8 +1,8 @@
-package com.rappi.restaurants.infraestructure.delivery.web.model
+package com.rappi.restaruants.infrastructure.delivery.web.model
 
 import com.rappi.restaurants.core.countries.entities.Country
 
-data class CountriesResponse (val continent: String, val countries: List<CountryResponse>)
+data class CountriesResponse(val continent: String, val countries: List<CountryResponse>)
 
 data class CountryResponse(val id: Long, val name: String)
 
